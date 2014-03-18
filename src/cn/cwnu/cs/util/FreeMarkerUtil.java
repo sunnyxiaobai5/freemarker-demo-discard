@@ -22,7 +22,7 @@ public class FreeMarkerUtil {
 			Map<String, Object> data, String ftlPath, String htmlPath) {
 		// 初始化设置
 		Configuration cfg = new Configuration();
-		cfg.setServletContextForTemplateLoading(context, "/");
+		cfg.setServletContextForTemplateLoading(context, "/templates/");
 		cfg.setEncoding(Locale.getDefault(), "UTF-8");
 
 		try {
@@ -32,14 +32,8 @@ public class FreeMarkerUtil {
 
 			// Html 页面路径及设置
 			htmlPath = context.getRealPath("/") + htmlPath;
-			File h = new File("D:\\testtest.txt");
-			//Writer out1 = new FileWriter(htmlPath);
 			Writer out = new OutputStreamWriter(new FileOutputStream(htmlPath),
 					"UTF-8");
-			 Writer out1 = new OutputStreamWriter(System.out);
-			template.process(data, out1);
-			out1.flush();
-			out1.close();
 
 			// 处理数据
 			template.process(data, out);

@@ -4,7 +4,7 @@
 	<package name="default" extends="struts-default">
 		<action name="list" class="cn.cwnu.cs.action.UserAction"
 			method="list">
-			<result type="freemarker">user.ftl</result>
+			<result type="freemarker">user.html</result>
 		</action>
 	</package>
 </struts>    
